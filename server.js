@@ -10,7 +10,7 @@
  * Module dependencies
  */
 
-require('dotenv').config();
+require('dotenv-safe').config();
 
 const fs = require('fs');
 const join = require('path').join;
@@ -46,7 +46,7 @@ function listen() {
   app.listen(port);
   console.log('Express app started on port ' + port);
 }
-
+console.log('Mongo URL:', JSON.stringify(process.env.MONGODB_URL));
 function connect() {
   mongoose.connection
     .on('error', console.log)

@@ -75,7 +75,18 @@ module.exports = function(app, passport) {
     }),
     users.signin
   );
-  app.get('/auth/google/callback', pauth('google', fail), users.authCallback);
+  app.get(
+  '/auth/google',
+  pauth('google', { scope: ['profile', 'email'] }),
+  users.signin
+);
+
+app.get(
+  '/auth/google/callback',
+  pauth('google', fail),
+  users.authCallback
+);
+
   app.get(
     '/auth/linkedin',
     pauth('linkedin', {

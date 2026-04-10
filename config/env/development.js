@@ -7,7 +7,7 @@
 const port = process.env.PORT || 3000;
 
 module.exports = {
-  db: process.env.MONGODB_URL || 'mongodb://localhost/noobjs_dev',
+  db: process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/nodeexpressdemo',
   twitter: {
     clientID: process.env.TWITTER_CLIENTID,
     clientSecret: process.env.TWITTER_SECRET,
