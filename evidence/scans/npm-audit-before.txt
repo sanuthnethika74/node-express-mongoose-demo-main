@@ -1,0 +1,419 @@
+# npm audit report
+
+@babel/helpers  <7.26.10
+Severity: moderate
+Babel has inefficient RegExp complexity in generated code with .replace when transpiling named capturing groups - https://github.com/advisories/GHSA-968p-4wvh-cqc8
+fix available via `npm audit fix`
+node_modules/@babel/helpers
+
+@tootallnate/once  <3.0.1
+@tootallnate/once vulnerable to Incorrect Control Flow Scoping - https://github.com/advisories/GHSA-vpq2-c234-7xj6
+fix available via `npm audit fix --force`
+Will install npm-check-updates@20.0.0, which is a breaking change
+node_modules/@tootallnate/once
+node_modules/make-fetch-happen/node_modules/@tootallnate/once
+node_modules/npm-registry-fetch/node_modules/@tootallnate/once
+  get-uri  3.0.1 - 5.0.0
+  Depends on vulnerable versions of @tootallnate/once
+  node_modules/get-uri
+  http-proxy-agent  4.0.1 - 5.0.0
+  Depends on vulnerable versions of @tootallnate/once
+  node_modules/http-proxy-agent
+  node_modules/make-fetch-happen/node_modules/http-proxy-agent
+  node_modules/npm-registry-fetch/node_modules/http-proxy-agent
+    make-fetch-happen  7.1.1 - 14.0.0
+    Depends on vulnerable versions of cacache
+    Depends on vulnerable versions of http-proxy-agent
+    node_modules/make-fetch-happen
+    node_modules/npm-registry-fetch/node_modules/make-fetch-happen
+      node-gyp  <=10.3.1
+      Depends on vulnerable versions of make-fetch-happen
+      Depends on vulnerable versions of tar
+      node_modules/node-gyp
+        @npmcli/run-script  1.1.1 - 9.0.1
+        Depends on vulnerable versions of node-gyp
+        node_modules/@npmcli/run-script
+          pacote  5.0.0 - 19.0.1 || 20.0.0 || 21.0.0
+          Depends on vulnerable versions of @npmcli/run-script
+          Depends on vulnerable versions of cacache
+          Depends on vulnerable versions of npm-registry-fetch
+          Depends on vulnerable versions of tar
+          node_modules/pacote
+            npm-check-updates  3.1.12 - 17.0.0-8
+            Depends on vulnerable versions of pacote
+            node_modules/npm-check-updates
+      npm-registry-fetch  7.0.1 - 14.0.5
+      Depends on vulnerable versions of make-fetch-happen
+      node_modules/npm-registry-fetch
+    pac-proxy-agent  1.1.0 - 6.0.4
+    Depends on vulnerable versions of @tootallnate/once
+    Depends on vulnerable versions of http-proxy-agent
+    Depends on vulnerable versions of pac-resolver
+    node_modules/pac-proxy-agent
+      proxy-agent  4.0.0 - 5.0.0
+      Depends on vulnerable versions of pac-proxy-agent
+      node_modules/proxy-agent
+        @pm2/agent  1.0.0 - 2.0.3
+        Depends on vulnerable versions of proxy-agent
+        Depends on vulnerable versions of semver
+        Depends on vulnerable versions of ws
+        node_modules/@pm2/agent
+
+ajv  <6.14.0 || >=7.0.0-alpha.0 <8.18.0
+Severity: moderate
+ajv has ReDoS when using `$data` option - https://github.com/advisories/GHSA-2g4f-4pwh-qvx6
+ajv has ReDoS when using `$data` option - https://github.com/advisories/GHSA-2g4f-4pwh-qvx6
+fix available via `npm audit fix`
+node_modules/ajv
+node_modules/table/node_modules/ajv
+
+bn.js  <4.12.3
+Severity: moderate
+bn.js affected by an infinite loop - https://github.com/advisories/GHSA-378v-28hj-76wf
+fix available via `npm audit fix`
+node_modules/bn.js
+
+body-parser  <=1.20.3 || 2.0.0-beta.1 - 2.0.2
+Severity: high
+body-parser vulnerable to denial of service when url encoding is enabled - https://github.com/advisories/GHSA-qwcr-r2fm-qrc7
+Depends on vulnerable versions of qs
+fix available via `npm audit fix --force`
+Will install express@4.22.1, which is outside the stated dependency range
+node_modules/body-parser
+node_modules/express/node_modules/body-parser
+  express  <=4.21.2 || 5.0.0-alpha.1 - 5.0.1
+  Depends on vulnerable versions of body-parser
+  Depends on vulnerable versions of cookie
+  Depends on vulnerable versions of path-to-regexp
+  Depends on vulnerable versions of qs
+  Depends on vulnerable versions of send
+  Depends on vulnerable versions of serve-static
+  node_modules/express
+
+brace-expansion  <=1.1.12 || 2.0.0 - 2.0.2
+Severity: moderate
+brace-expansion Regular Expression Denial of Service vulnerability - https://github.com/advisories/GHSA-v6h2-p8h4-qcjw
+brace-expansion Regular Expression Denial of Service vulnerability - https://github.com/advisories/GHSA-v6h2-p8h4-qcjw
+brace-expansion: Zero-step sequence causes process hang and memory exhaustion - https://github.com/advisories/GHSA-f886-m6hf-6m8v
+brace-expansion: Zero-step sequence causes process hang and memory exhaustion - https://github.com/advisories/GHSA-f886-m6hf-6m8v
+fix available via `npm audit fix`
+node_modules/brace-expansion
+node_modules/cacache/node_modules/brace-expansion
+node_modules/filelist/node_modules/brace-expansion
+node_modules/ignore-walk/node_modules/brace-expansion
+node_modules/make-fetch-happen/node_modules/brace-expansion
+node_modules/npm-check-updates/node_modules/brace-expansion
+node_modules/read-package-json/node_modules/brace-expansion
+
+cookie  <0.7.0
+cookie accepts cookie name, path, and domain with out of bounds characters - https://github.com/advisories/GHSA-pxg6-pf52-xh8x
+fix available via `npm audit fix --force`
+Will install csurf@1.2.2, which is a breaking change
+node_modules/cookie
+node_modules/express-session/node_modules/cookie
+node_modules/express/node_modules/cookie
+  cookie-parser  1.0.1 - 1.4.6
+  Depends on vulnerable versions of cookie
+  node_modules/cookie-parser
+  csurf  >=1.3.0
+  Depends on vulnerable versions of cookie
+  node_modules/csurf
+  express-session  1.0.1 - 1.18.1
+  Depends on vulnerable versions of cookie
+  Depends on vulnerable versions of on-headers
+  node_modules/express-session
+
+cross-spawn  7.0.0 - 7.0.4
+Severity: high
+Regular Expression Denial of Service (ReDoS) in cross-spawn - https://github.com/advisories/GHSA-3xgq-45jj-v275
+fix available via `npm audit fix`
+node_modules/cross-spawn
+
+debug  4.0.0 - 4.3.0
+Regular Expression Denial of Service in debug - https://github.com/advisories/GHSA-gxpj-cx7g-858c
+fix available via `npm audit fix`
+node_modules/@babel/core/node_modules/debug
+node_modules/@babel/traverse/node_modules/debug
+node_modules/superagent/node_modules/debug
+
+dicer  *
+Severity: high
+Crash in HeaderParser in dicer - https://github.com/advisories/GHSA-wm7h-9275-46v2
+fix available via `npm audit fix`
+node_modules/dicer
+  busboy  <=0.3.1
+  Depends on vulnerable versions of dicer
+  node_modules/busboy
+    multer  <=2.1.0
+    Depends on vulnerable versions of busboy
+    node_modules/multer
+
+diff  5.0.0 - 5.2.1
+jsdiff has a Denial of Service vulnerability in parsePatch and applyPatch - https://github.com/advisories/GHSA-73rr-hh4g-fpgx
+fix available via `npm audit fix`
+node_modules/diff
+
+
+flatted  <=3.4.1
+Severity: high
+flatted vulnerable to unbounded recursion DoS in parse() revive phase - https://github.com/advisories/GHSA-25h7-pfq9-p65f
+Prototype Pollution via parse() in NodeJS flatted - https://github.com/advisories/GHSA-rf6f-7fwh-wjgh
+fix available via `npm audit fix`
+node_modules/flatted
+
+form-data  <2.5.4
+Severity: critical
+form-data uses unsafe random function in form-data for choosing boundary - https://github.com/advisories/GHSA-fjxv-7rqg-78g4
+fix available via `npm audit fix --force`
+Will install notifier@0.1.7, which is a breaking change
+node_modules/@types/request/node_modules/form-data
+node_modules/form-data
+  request  *
+  Depends on vulnerable versions of form-data
+  Depends on vulnerable versions of qs
+  Depends on vulnerable versions of tough-cookie
+  node_modules/request
+    @sendgrid/client  <=6.5.5
+    Depends on vulnerable versions of request
+    node_modules/@sendgrid/client
+      @sendgrid/mail  <=6.5.5
+      Depends on vulnerable versions of @sendgrid/client
+      node_modules/@sendgrid/mail
+    postmark  0.0.3 - 0.0.5 || 2.0.0 - 2.3.5
+    Depends on vulnerable versions of request
+    node_modules/postmark
+      notifier  <=0.1.0 || >=0.2.0
+      Depends on vulnerable versions of @sendgrid/mail
+      Depends on vulnerable versions of postmark
+      Depends on vulnerable versions of pug
+      node_modules/notifier
+
+ip  *
+Severity: high
+ip SSRF improper categorization in isPublic - https://github.com/advisories/GHSA-2p57-rm9w-gvfp
+fix available via `npm audit fix`
+node_modules/ip
+node_modules/socks/node_modules/ip
+  pac-resolver  1.3.0 - 7.0.0
+  Depends on vulnerable versions of ip
+  node_modules/pac-resolver
+  socks  1.0.0 - 2.7.1
+  Depends on vulnerable versions of ip
+  node_modules/socks
+
+js-yaml  <3.14.2 || >=4.0.0 <4.1.1
+Severity: moderate
+js-yaml has prototype pollution in merge (<<) - https://github.com/advisories/GHSA-mh29-5h37-fv8m
+js-yaml has prototype pollution in merge (<<) - https://github.com/advisories/GHSA-mh29-5h37-fv8m
+fix available via `npm audit fix`
+node_modules/js-yaml
+node_modules/rc-config-loader/node_modules/js-yaml
+
+lodash  <=4.17.23
+Severity: high
+Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions - https://github.com/advisories/GHSA-xxjr-mmjv-4gpg
+lodash vulnerable to Code Injection via `_.template` imports key names - https://github.com/advisories/GHSA-r5fr-rjxr-66jc
+lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit` - https://github.com/advisories/GHSA-f23m-r3pf-42rh
+fix available via `npm audit fix`
+node_modules/lodash
+
+micromatch  <4.0.8
+Severity: moderate
+Regular Expression Denial of Service (ReDoS) in micromatch - https://github.com/advisories/GHSA-952p-6rrq-rcjv
+fix available via `npm audit fix`
+node_modules/micromatch
+
+minimatch  <=3.1.3 || 5.0.0 - 5.1.7
+Severity: high
+minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern - https://github.com/advisories/GHSA-3ppc-4f35-3m26
+minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern - https://github.com/advisories/GHSA-3ppc-4f35-3m26
+minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments - https://github.com/advisories/GHSA-7r86-cg39-jmmj
+minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments - https://github.com/advisories/GHSA-7r86-cg39-jmmj
+minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions - https://github.com/advisories/GHSA-23c5-xmqv-rm74
+minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions - https://github.com/advisories/GHSA-23c5-xmqv-rm74
+fix available via `npm audit fix`
+node_modules/cacache/node_modules/minimatch
+node_modules/filelist/node_modules/minimatch
+node_modules/ignore-walk/node_modules/minimatch
+node_modules/make-fetch-happen/node_modules/minimatch
+node_modules/minimatch
+node_modules/npm-check-updates/node_modules/minimatch
+node_modules/read-package-json/node_modules/minimatch
+
+mongoose  <=6.13.5
+Severity: critical
+Mongoose search injection vulnerability - https://github.com/advisories/GHSA-vg7j-7cwx-8wgw
+Mongoose search injection vulnerability - https://github.com/advisories/GHSA-m7xq-9374-9rvx
+fix available via `npm audit fix --force`
+Will install mongoose@9.3.3, which is a breaking change
+node_modules/mongoose
+
+
+on-headers  <1.1.0
+on-headers is vulnerable to http response header manipulation - https://github.com/advisories/GHSA-76c9-3jph-rj3q
+fix available via `npm audit fix --force`
+Will install compression@1.8.1, which is outside the stated dependency range
+node_modules/on-headers
+  compression  1.0.3 - 1.8.0
+  Depends on vulnerable versions of on-headers
+  node_modules/compression
+  morgan  1.6.0 - 1.10.0
+  Depends on vulnerable versions of on-headers
+  node_modules/morgan
+
+passport  <0.6.0
+Severity: moderate
+Passport vulnerable to session regeneration when a users logs in or out - https://github.com/advisories/GHSA-v923-w3x8-wh69
+fix available via `npm audit fix --force`
+Will install passport@0.7.0, which is a breaking change
+node_modules/passport
+node_modules/passport-oauth/node_modules/passport
+  passport-oauth  0.1.3 - 0.1.15
+  Depends on vulnerable versions of passport
+  node_modules/passport-oauth
+
+path-to-regexp  <=0.1.12
+Severity: high
+path-to-regexp outputs backtracking regular expressions - https://github.com/advisories/GHSA-9wv6-86v2-598j
+path-to-regexp contains a ReDoS - https://github.com/advisories/GHSA-rhx6-c78j-4q9w
+path-to-regexp vulnerable to Regular Expression Denial of Service via multiple route parameters - https://github.com/advisories/GHSA-37ch-88jc-xwx2
+fix available via `npm audit fix --force`
+Will install express@4.22.1, which is outside the stated dependency range
+node_modules/path-to-regexp
+
+picomatch  <=2.3.1
+Severity: high
+Picomatch: Method Injection in POSIX Character Classes causes incorrect Glob Matching - https://github.com/advisories/GHSA-3v7f-55p6-f55p
+Picomatch has a ReDoS vulnerability via extglob quantifiers - https://github.com/advisories/GHSA-c2c7-rcm5-vvqj
+fix available via `npm audit fix`
+node_modules/picomatch
+
+pm2  *
+pm2 Regular Expression Denial of Service vulnerability - https://github.com/advisories/GHSA-x5gf-qvw8-r2rm
+No fix available
+node_modules/pm2
+
+pug  <=3.0.2
+Severity: moderate
+Pug allows JavaScript code execution if an application accepts untrusted input - https://github.com/advisories/GHSA-3965-hpx2-q597
+Remote code execution via the `pretty` option. - https://github.com/advisories/GHSA-p493-635q-r6gr
+Depends on vulnerable versions of pug-code-gen
+fix available via `npm audit fix --force`
+Will install notifier@0.1.7, which is a breaking change
+node_modules/notifier/node_modules/pug
+node_modules/pug
+
+pug-code-gen  <=3.0.2
+Severity: moderate
+Pug allows JavaScript code execution if an application accepts untrusted input - https://github.com/advisories/GHSA-3965-hpx2-q597
+fix available via `npm audit fix --force`
+Will install notifier@0.1.7, which is a breaking change
+node_modules/pug-code-gen
+node_modules/pug/node_modules/pug-code-gen
+
+qs  <=6.14.1
+Severity: moderate
+qs's arrayLimit bypass in comma parsing allows denial of service - https://github.com/advisories/GHSA-w7fw-mjwx-w883
+qs's arrayLimit bypass in its bracket notation allows DoS via memory exhaustion - https://github.com/advisories/GHSA-6rw7-vpxm-498p
+fix available via `npm audit fix --force`
+Will install notifier@0.1.7, which is a breaking change
+node_modules/body-parser/node_modules/qs
+node_modules/express/node_modules/qs
+node_modules/qs
+node_modules/superagent/node_modules/qs
+
+
+semver  6.0.0 - 6.3.0 || 7.0.0 - 7.5.1
+Severity: high
+semver vulnerable to Regular Expression Denial of Service - https://github.com/advisories/GHSA-c2qf-rxjj-qqgw
+semver vulnerable to Regular Expression Denial of Service - https://github.com/advisories/GHSA-c2qf-rxjj-qqgw
+fix available via `npm audit fix --force`
+Will install nodemon@3.1.14, which is a breaking change
+node_modules/@pm2/agent/node_modules/semver
+node_modules/@pm2/io/node_modules/semver
+node_modules/simple-update-notifier/node_modules/semver
+  @pm2/io  4.3.4-beta.0 - 5.0.0
+  Depends on vulnerable versions of semver
+  node_modules/@pm2/io
+  simple-update-notifier  1.0.7 - 1.1.0
+  Depends on vulnerable versions of semver
+  node_modules/simple-update-notifier
+    nodemon  2.0.19 - 2.0.22
+    Depends on vulnerable versions of simple-update-notifier
+    node_modules/nodemon
+
+send  <0.19.0
+send vulnerable to template injection that can lead to XSS - https://github.com/advisories/GHSA-m6fv-jmcg-4jfg
+fix available via `npm audit fix --force`
+Will install express@4.22.1, which is outside the stated dependency range
+node_modules/send
+  serve-static  <=1.16.0
+  Depends on vulnerable versions of send
+  node_modules/serve-static
+
+
+systeminformation  <=5.30.7
+Severity: high
+Systeminformation has command injection vulnerability in getWindowsIEEE8021x (SSID) - https://github.com/advisories/GHSA-cvv5-9h9w-qp2m
+systeminformation has a Command Injection vulnerability in fsSize() function on Windows - https://github.com/advisories/GHSA-wphj-fx3q-84ch
+Command Injection via Unsanitized `locate` Output in `versions()` — systeminformation - https://github.com/advisories/GHSA-5vv4-hvf7-2h46
+Systeminformation has a Command Injection via unsanitized interface parameter in wifi.js retry path - https://github.com/advisories/GHSA-9c88-49p5-5ggf
+fix available via `npm audit fix`
+node_modules/systeminformation
+
+tar  <=7.5.10
+Severity: high
+node-tar Vulnerable to Arbitrary File Creation/Overwrite via Hardlink Path Traversal - https://github.com/advisories/GHSA-34x7-hfp2-rc4v
+node-tar is Vulnerable to Arbitrary File Overwrite and Symlink Poisoning via Insufficient Path Sanitization - https://github.com/advisories/GHSA-8qq5-rm4j-mr97
+Arbitrary File Read/Write via Hardlink Target Escape Through Symlink Chain in node-tar Extraction - https://github.com/advisories/GHSA-83g3-92jg-28cx
+tar has Hardlink Path Traversal via Drive-Relative Linkpath - https://github.com/advisories/GHSA-qffp-2rhf-9h96
+node-tar Symlink Path Traversal via Drive-Relative Linkpath - https://github.com/advisories/GHSA-9ppj-qmqm-q256
+Race Condition in node-tar Path Reservations via Unicode Ligature Collisions on macOS APFS - https://github.com/advisories/GHSA-r6q2-hw4h-h46w
+fix available via `npm audit fix --force`
+Will install npm-check-updates@20.0.0, which is a breaking change
+node_modules/tar
+  @mapbox/node-pre-gyp  <=1.0.11
+  Depends on vulnerable versions of tar
+  node_modules/@mapbox/node-pre-gyp
+  cacache  14.0.0 - 18.0.4
+  Depends on vulnerable versions of tar
+  node_modules/cacache
+  node_modules/make-fetch-happen/node_modules/cacache
+
+tough-cookie  <4.1.3
+Severity: moderate
+tough-cookie Prototype Pollution vulnerability - https://github.com/advisories/GHSA-72xf-g2v4-qvf3
+fix available via `npm audit fix --force`
+Will install notifier@0.1.7, which is a breaking change
+node_modules/tough-cookie
+
+vm2  <=3.10.1
+Severity: critical
+vm2 Sandbox Escape vulnerability - https://github.com/advisories/GHSA-g644-9gfx-q4q4
+vm2 Sandbox Escape vulnerability - https://github.com/advisories/GHSA-cchq-frgv-rjh5
+vm2 has a Sandbox Escape - https://github.com/advisories/GHSA-99p7-6v5w-7xg8
+fix available via `npm audit fix`
+node_modules/vm2
+
+ws  7.0.0 - 7.5.9
+Severity: high
+ws affected by a DoS when handling a request with many HTTP headers - https://github.com/advisories/GHSA-3h5v-q93c-6h6q
+fix available via `npm audit fix`
+node_modules/ws
+
+yaml  2.0.0 - 2.8.2
+Severity: moderate
+yaml is vulnerable to Stack Overflow via deeply nested YAML collections - https://github.com/advisories/GHSA-48c2-rrv3-qjmp
+fix available via `npm audit fix`
+node_modules/yaml
+
+68 vulnerabilities (17 low, 17 moderate, 30 high, 4 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues possible (including breaking changes), run:
+  npm audit fix --force
+
+Some issues need review, and may require choosing
+a different dependency.
