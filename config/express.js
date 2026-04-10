@@ -40,13 +40,18 @@ module.exports = function (app, passport) {
         defaultSrc: ["'self'"],
         baseUri: ["'self'"],
         formAction: ["'self'"],
-        objectSrc: ["'none'"],
         frameAncestors: ["'self'"],
+        objectSrc: ["'none'"],
+
         scriptSrc: ["'self'"],
+        scriptSrcAttr: ["'none'"],
+
         styleSrc: ["'self'"],
         imgSrc: ["'self'", 'data:'],
         fontSrc: ["'self'"],
+
         frameSrc: ["'self'"],
+        upgradeInsecureRequests: [],
       },
     },
   })
