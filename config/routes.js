@@ -9,6 +9,7 @@ const articles = require('../app/controllers/articles');
 const comments = require('../app/controllers/comments');
 const tags = require('../app/controllers/tags');
 const auth = require('./middlewares/authorization');
+const rateLimit = require('express-rate-limit');
 
 /**
  * Route middlewares
@@ -28,13 +29,30 @@ const fail = {
 module.exports = function(app, passport) {
   const pauth = passport.authenticate.bind(passport);
 
+  const authLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 5,
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: 'Too many login attempts. Please try again after 15 minutes.'
+  });
+
+  const signupLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000,
+    max: 3,
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: 'Too many signup attempts. Please try again later.'
+  });
+
   // user routes
   app.get('/login', users.login);
   app.get('/signup', users.signup);
   app.get('/logout', users.logout);
-  app.post('/users', users.create);
+  app.post('/users', signupLimiter, users.create);
   app.post(
     '/users/session',
+    authLimiter,
     pauth('local', {
       failureRedirect: '/login',
       failureFlash: 'Invalid email or password.'
