@@ -107,7 +107,6 @@ module.exports = function (app, passport) {
   app.use(cookieParser());
   app.set('trust proxy', 1);
   const isProduction = env === 'production';
-
 app.use(
   session({
     resave: false,
