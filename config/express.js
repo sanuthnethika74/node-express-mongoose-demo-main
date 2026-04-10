@@ -32,17 +32,25 @@ const env = process.env.NODE_ENV || 'development';
  */
 
 module.exports = function (app, passport) {
- helmet({
-  contentSecurityPolicy: {
-    useDefaults: true,
-    directives: {
-      'script-src': ["'self'", 'code.jquery.com'],
-      'style-src': ["'self'", "'unsafe-inline'", 'netdna.bootstrapcdn.com'],
-      'img-src': ["'self'", 'data:', 'github.com'],
-      'frame-src': ["'self'", 'ghbtns.com'],
+ app.use(
+  helmet({
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        defaultSrc: ["'self'"],
+        baseUri: ["'self'"],
+        formAction: ["'self'"],
+        objectSrc: ["'none'"],
+        frameAncestors: ["'self'"],
+        scriptSrc: ["'self'"],
+        styleSrc: ["'self'"],
+        imgSrc: ["'self'", 'data:'],
+        fontSrc: ["'self'"],
+        frameSrc: ["'self'"],
+      },
     },
-  },
-})
+  })
+);
   app.use(requireHttps);
 
   // Compression middleware (should be placed before express.static)
